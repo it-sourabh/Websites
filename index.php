@@ -28,9 +28,16 @@
 
     <body>
     <div class = "Body">
-        <h1><b>Chapman University</b></h1>
+    <h1><b>Chapman University</b></h1>
         <p class="cont">
-            Hello and Welcome to Chapman University
+        <?php
+            if (isset($_SESSION['uname'])) {
+                echo "Hello ". $_SESSION['uname']. "and Welcome to Chapman University";
+            }
+            else {
+                echo "Hello and Welcome to Chapman University";    
+            }
+        ?>
         </p>
     </div>    
     </body>

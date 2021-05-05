@@ -18,18 +18,18 @@
         <?php
             if ($_GET['uname']) {
                 $uname = $_GET['uname'];
-                echo "<input type='text' placeholder='Username or E-mail' required name='unamail' value='$uname' /><br><br>";
+                echo "<input type='text' placeholder='Username or E-mail' name='unamail' value='$uname' /><br><br>";
             }
             else {
-                echo "<input type='text' placeholder='Username or E-mail' required name='unamail'/><br><br>";
+                echo "<input type='text' placeholder='Username or E-mail' name='unamail'/><br><br>";
             }
 
             if ($_GET['pwd']) {
                 $pwd = $_GET['pwd'];
-                echo "<input type='password' placeholder='Password' required name='passwd' value='$pwd'/><br><br>";
+                echo "<input type='password' placeholder='Password' name='passwd' value='$pwd'/><br><br>";
             }
             else {
-                echo "<input type='password' placeholder='Password' required name='passwd'/><br><br>";
+                echo "<input type='password' placeholder='Password' name='passwd'/><br><br>";
             }
         ?>
         <br><br><br>
