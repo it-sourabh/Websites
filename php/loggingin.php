@@ -13,7 +13,7 @@ else {
     require_once 'functions.php';
 
     if (emptylogin($uname, $pwd) !== false) {
-        header("Location: ../login.php?error=empty&uname=$uname&pwd=$pwd");
+        header("Location: ../login.php?error=empty&uname=$uname");
         exit();
 
     }

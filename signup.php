@@ -83,6 +83,7 @@
           if ($_GET['signup'] == "uexist") {echo "*Username Already Exists";}
           if ($_GET['signup'] == "emexist") {echo "*E-Mail Already Exists";}
           if ($_GET['signup'] == "invadm") {echo "*Please Enter a valid Admission Number";}
+          if ($_GET['signup'] == "weakpass") {echo "*Password must be at least 8 characters in length and must contain at least one number, one upper case letter, one lower case letter and one special character.";}
           if (isset($_GET['gender'])) {
             $gender = $_GET['gender'];
             echo "<script>document.getElementById('$gender').checked = true;</script>";

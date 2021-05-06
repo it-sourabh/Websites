@@ -176,3 +176,50 @@ function loginuser($conn, $uname, $pwd) {
         header("Location: ../index.php");
     }
 }
+
+function qrypwd($conn, $uname) {
+    $sql = "SELECT * from users where uname = ?;";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("Location: ../loggedin/chpwd.php?error=stmt5");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "s", $uname);
+    mysqli_stmt_execute($stmt);
+    
+    $result = mysqli_stmt_get_result($stmt);
+    
+    $row = mysqli_fetch_assoc($result);
+    return $row;
+
+    mysqli_stmt_close($stmt);
+}
+
+function changepwd($conn, $uname, $npwd) {
+    $sqli = "UPDATE users set passwd = ? where uname = ?;";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sqli)) {
+        header("Location: ../loggedin/chpwd.php?error=stmt3");
+        exit();
+    }
+    $hpwd = password_hash($npwd, PASSWORD_DEFAULT);
+    mysqli_stmt_bind_param($stmt, "ss", $hpwd, $uname);
+    mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_close($stmt);
+    header("Location: ../loggedin/chpwd.php?change=success");
+
+}
+
+function passstrength($password) {
+    $number = preg_match('@[0-9]@', $password);
+    $uppercase = preg_match('@[A-Z]@', $password);
+    $lowercase = preg_match('@[a-z]@', $password);
+    $specialChars = preg_match('@[^\w]@', $password);
+ 
+    if(strlen($password) < 8 || !$number || !$uppercase || !$lowercase || !$specialChars) {
+             return true;
+    } else {
+            return false;
+}
+}

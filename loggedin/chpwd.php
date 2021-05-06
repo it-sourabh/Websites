@@ -30,14 +30,22 @@ if (!isset($_SESSION['uname'])) {
         <br><br><br>
         <input type="submit" name="submit" value="Change Password">
         </form>
-        <p>
+        <p class="p1">
         <?php
         
-          if ($_GET['error'] == 'loginfail') {echo "*Invalid Credentials";}
+          if ($_GET['error'] == 'nomatch') {echo "*Passwords do not match";}
           if ($_GET['error'] == 'empty') {echo "*Please Input all the fields";}
-        
+          if ($_GET['error'] == 'wrong') {echo "*Wrong Current Password";}
+          if ($_GET['error'] == "weakpass") {echo "*Password must be at least 8 characters in length and must contain at least one number, one upper case letter, one lower case letter and one special character.";}
         ?>
         </p>
+        <p class="p2">
+        <?php
+            
+          if ($_GET['change'] == 'success') {echo "*Password Changed Successfully";}
+        ?>
+        </p>
+
         </div>
 
     </body>

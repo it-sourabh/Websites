@@ -60,5 +60,10 @@ else {
 
     }
 
+    if (passstrength($pwd) !== false) {
+        header("Location: ../signup.php?signup=weakpass&fname=$fname&lname=$lname&uname=$uname&mail=$mail&admno=$admno&gender=$gender&dob=$dob");
+        exit();
+    }
+
     addUser($conn, $fname, $lname, $uname, $pwd, $mail, $admno, $gender, $dob);
 }
