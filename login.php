@@ -3,9 +3,9 @@
     <head>
         <title>Login</title>
         <div class="topnav">
-          <a href="index.php">Home</a>
-          <a href="signup.php">Sign Up</a>
-          <a href="login.php">Login</a>
+          <a href="index.php"><b>Home</b></a>
+          <a href="signup.php"><b>Sign Up</b></a>
+          <a href="login.php"><b>Login</b></a>
         </div>
         <link rel="stylesheet" href="css/login.css">
     </head>

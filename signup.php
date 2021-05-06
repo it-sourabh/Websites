@@ -5,9 +5,9 @@
         
         <link rel="stylesheet" href="css/signup.css">
         <div class="topnav">
-          <a href="index.php">Home</a>
-          <a href="signup.php">Sign Up</a>
-          <a href="login.php">Login</a>
+          <a href="index.php"><b>Home</b></a>
+          <a href="signup.php"><b>Sign Up</b></a>
+          <a href="login.php"><b>Login</b></a>
         </div>
     </head>
 
