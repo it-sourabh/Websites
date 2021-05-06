@@ -32,7 +32,7 @@
         <p class="cont">
         <?php
             if (isset($_SESSION['uname'])) {
-                echo "Hello ". $_SESSION['uname']. ", Welcome to Chapman University";
+                echo "Hello ". $_SESSION['fname']. ", Welcome to Chapman University";
             }
             else {
                 echo "Hello and Welcome to Chapman University";    

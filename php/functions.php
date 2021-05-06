@@ -173,6 +173,7 @@ function loginuser($conn, $uname, $pwd) {
         session_start();
         $_SESSION['uid'] = $uidexist['uid'];
         $_SESSION['uname'] = $uidexist['uname'];
+        $_SESSION['fname'] = $uidexist['fname'];
         header("Location: ../index.php");
     }
 }
